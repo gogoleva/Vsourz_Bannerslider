@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+		<reference name="head">
+			<action method="addItem"><type>skin_js</type><name>js/bannerslider/no-conflict.js</name></action>
+			<action method="addItem" ifconfig="bannerslider/settings/loadjs"><type>skin_js</type><name>js/bannerslider/jquery-1.10.2.min.js</name></action>	
+			<action method="addItem"><type>skin_css</type><name>css/bannerslider/bannerslider.css</name></action>
+			<action method="addItem"><type>skin_css</type><name>css/bannerslider/animate.min.css</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/bannerslider/owl.slider.js</name></action>
+			<action method="addItem"><type>skin_css</type><name>css/bannerslider/owl.carousel.css</name></action>
+		</reference>
+	</default>
+</layout>

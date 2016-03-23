@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+		<bannerslider translate="label">
+			<label>Vsourz Banner Slider</label>
+			<sort_order>155</sort_order>
+		</bannerslider>
+	</tabs>
+	<sections>
+		<bannerslider translate="label">
+			<label>Banner Slider</label>
+			<tab>bannerslider</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>1000</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<settings translate="label">
+					<label>General Settings</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<loadjs translate="label">
+							<label>Load JQuery Library</label>
+							<comment><![CDATA[Select YES if JQuery library in not included in your Magento Project]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</loadjs>
+					</fields>
+				</settings>				
+			</groups>
+		</bannerslider>
+	</sections>
+</config>

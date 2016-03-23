@@ -1,0 +1,8 @@
+{
+    "name": "gogoleva/vsourz_bannerslider",
+    "description": "This extension will provide user with an ability to create any number of slide categories, which can be called using the short-codes.",
+    "type": "magento-module",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

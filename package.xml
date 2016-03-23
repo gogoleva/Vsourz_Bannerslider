@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<package>
+    <name>Responsive_Owl_Slider</name>
+    <version>1.0.1</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/MIT">Massachusetts Institute of Technology License (MITL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Fully responsive banner slider built on OWL Carousel 2. 40+ Effects. Categorized banner management from Back-end</summary>
+    <description>An exclusive banner slider built on OWL Carousel JS that livens up your website with impressive and impactful banners. Give your image banners a radiant look with more than 40 effects. &#xD;
+&#xD;
+All it takes is 3 easy steps to have this on your website:&#xD;
+&#xD;
+Install the extension from Magento Connect&#xD;
+Create Category, upload image banners, select Category and select effects you want&#xD;
+Add the Code Snippet where you want the banner to be invoked&#xD;
+&#xD;
+Read How to use? section to find out more about the slider configurations&#xD;
+&#xD;
+Demo Link: http://extensiondemo.vsourz.co/&#xD;
+&#xD;
+Need Support? Click Here&#xD;
+&#xD;
+Features:&#xD;
+&#xD;
+- Simple, easy to use interface.&#xD;
+- Creates Responsive slideshows within seconds.&#xD;
+- Support for categorized banner sliders with ability to create unrestricted categories.&#xD;
+- Unrestricted support for Image slides (supports Caption, Link, Description Text, Images, Videos, Maps).&#xD;
+- Full Width Slider Support.&#xD;
+- Fast &#x2013; only the minimum JavaScript and CSS is included in your page, making it faster to load.&#xD;
+- Touch Swipe by Finger/Mouse.&#xD;
+- 40plus animation effects.&#xD;
+- Ability to manage banner effects and colors using Magento Backend.&#xD;
+- Cross Browser, All Browsers Supported&#xD;
+- Mobile Device Optimized&#xD;
+- Publish/Unpublish Slides based on selected date&#xD;
+&#xD;
+How to use?&#xD;
+&#xD;
+Step 1: Install Extension from Magento Connect&#xD;
+Step 2: Setup the Slider Category. Goto Banner Slider &gt;&gt; Manage Slide Category &gt;&gt; Add Category Slider and follow below steps as shown in the screenshot.&#xD;
+http://extensiondemo.vsourz.co/media/wysiwyg/category1.jpg&#xD;
+Step 3: Insert the image and associate it with the category. Goto Banner Slider &gt;&gt; Manage Slides &gt;&gt; Add Slide and follow below steps as shown in the screenshot.&#xD;
+http://extensiondemo.vsourz.co/media/wysiwyg/slide1.jpg&#xD;
+Step 4: Call the slider on the desired page using the predefined short codes.&#xD;
+&#xD;
+** Shortcode&#xD;
+ADMIN&#xD;
+{{block type="bannerslider/bannerslider" name="bannerslider" category_id="1" template="bannerslider/bannerslider.phtml" }}&#xD;
+&#xD;
+XML&#xD;
+&lt; reference name="content"&gt;&#xD;
+&lt; block type="bannerslider/bannerslider" name="bannerslider" template="bannerslider/bannerslider.phtml"&gt;&#xD;
+&lt; action method="setCategoryId"&gt;&lt; category_id&gt;1&lt; /category_id&gt;&lt; /action&gt;&#xD;
+&lt; /block&gt;&#xD;
+&lt; /reference&gt; &#xD;
+&#xD;
+HTML&#xD;
+echo $this-&gt;getLayout()-&gt;createBlock('bannerslider/bannerslider')-&gt;setCategoryId('1')-&gt;setTemplate('bannerslider/bannerslider.phtml')-&gt;toHtml();&#xD;
+&#xD;
+Please Note: In the XML code, we have intentionally placed space in the XML tags. Please remove the spaces while adding the code.</description>
+    <notes>- Resolve directory separator issue</notes>
+    <authors><author><name>Vsourz Digital</name><user>MAG002979323</user><email>mehul@vsourz.com</email></author></authors>
+    <date>2015-09-08</date>
+    <time>09:59:48</time>
+    <contents><target name="magecommunity"><dir name="Vsourz"><dir name="Bannerslider"><dir name="Block"><dir name="Adminhtml"><dir name="Bannerslider"><dir name="Renderer"><file name="Category.php" hash="74ef72f3eca49626bb03abeed005a44a"/><file name="Catimage.php" hash="8fcd79afe41bf78140e1af476b9931fe"/><file name="Image.php" hash="e6d58c41333581b9b104b009e42b6732"/><file name="Status.php" hash="168f6ef1a43cd324acf32caa3aac4ba5"/></dir></dir><dir name="Category"><dir name="Edit"><file name="Form.php" hash="b2e367356e30c4c6c160970ea475cae5"/><dir name="Tabs"><file name="Form.php" hash="9cfdd467b7440c8ab611a6c72106aad1"/></dir><file name="Tabs.php" hash="829947261268f847a7471ac00806f6fd"/></dir><file name="Edit.php" hash="5f93ab08c68905a7239a70a284fb5540"/><file name="Grid.php" hash="d3b1f09b70ad9a1238298aaf7c67bde3"/></dir><dir name="Image"><dir name="Edit"><file name="Form.php" hash="94d630c37b94b27dd5e6a3c450914c3c"/><dir name="Tabs"><file name="Form.php" hash="9a76944a3cc0da333c192a236b2faf29"/></dir><file name="Tabs.php" hash="8d9dae43a3b3546554cd346758cb452e"/></dir><file name="Edit.php" hash="f20bf6f3a3cb48dd7e4e06fd87573a84"/><file name="Grid.php" hash="d662aa4b1fae64cf2eb9d9fbfda478b1"/></dir><file name="Slide.php" hash="ad91018546ea7878fcd626c2408f8fad"/><file name="Slider.php" hash="75e3f6c460c11c292340fa54b64770c5"/></dir><file name="Bannerslider.php" hash="ca75226a72738b6b1be4e5faa724e935"/></dir><dir name="Helper"><file name="Data.php" hash="128263516fa22072df8a1e7b3a2f3260"/></dir><dir name="Model"><file name="Align.php" hash="1aaafcef6317a5efad4b9bb7cd926c1d"/><file name="Animationin.php" hash="23bc1b215a2671721b3d2965faac9464"/><file name="Animationout.php" hash="d08ea1b53588d3957575d162ff6a2cdd"/><file name="Bannerslider.php" hash="07ded4de06b4e4cb5af358e114abe362"/><file name="Categoryval.php" hash="3a8b19e8954371e7a4b215237538bfef"/><file name="Imagecategory.php" hash="81e6e3410eab6d41f60abbc728776b66"/><file name="Imagedetail.php" hash="3d3cf19691756ae32575a238f2ab1fea"/><dir name="Resource"><dir name="Imagecategory"><file name="Collection.php" hash="3b4dcf09798007986115fae27198aca5"/></dir><file name="Imagecategory.php" hash="93275df9ac2459216d8ce95a2707811b"/><dir name="Imagedetail"><file name="Collection.php" hash="b8689924261b354a4d712a9a736f2449"/></dir><file name="Imagedetail.php" hash="e48c2814899f03e551dbd0d5650eb621"/></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="CategoryController.php" hash="351665df3513ae1362bc230f67be0c85"/><file name="ImageController.php" hash="ede68c5738bff7f0134ccb358143e826"/></dir></dir><dir name="data"><dir name="bannerslider_setup"><file name="data-install-0.1.0.php" hash="b23d20d160568e71df2da142719a07b3"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="44c66d5233ae3e6582493c61b8c77864"/><file name="config.xml" hash="acb5981d29af515f125841a2d9f6431a"/><file name="system.xml" hash="4c608359184cc7b3cd71c5fd6eaf074a"/></dir><dir name="sql"><dir name="bannerslider_setup"><file name="mysql4-install-0.1.0.php" hash="62bfd79eaaaf64ce235cabaffc8e40d4"/><file name="mysql4-upgrade-0.1.0-0.1.1.php" hash="f788f36c79f2d9fb9221c16194620860"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Vsourz_Bannerslider.xml" hash="d1fd185de844ee5297e77deaf8870153"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="bannerslider.xml" hash="54205744501c78a0cd424a59f3092a88"/></dir><dir name="template"><dir name="bannerslider"><file name="bannerslider.phtml" hash=""/></dir></dir></dir></dir></dir><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="bannerslider.xml" hash="8cacfe5fdbed3ac4fdb75bfa2407ce6d"/></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="base"><dir name="default"><dir name="css"><dir name="bannerslider"><file name="animate.css" hash="3f1e82dcc86df45a1943d41a049b8b51"/><file name="animate.min.css" hash="199ea108e710786634d182e11782de2a"/><file name="bannerslider.css" hash="d45581f5765c810ff4f16ec0c0577a01"/><file name="owl.carousel.css" hash="b51416af9e8adbe3d16f5f2526aba221"/></dir></dir><dir name="js"><dir name="bannerslider"><file name="jquery-1.10.2.min.js" hash="f49b02ff7ee95b2d6509a9e553759991"/><file name="no-conflict.js" hash="d41d8cd98f00b204e9800998ecf8427e"/><file name="owl.banner.min.js" hash="ffaa3c82ad2c6e216e68aca44746e1be"/><file name="owl.slider.js" hash="4876b7da868a30df943238018bb5cb6a"/></dir></dir></dir></dir></dir></target><target name="mageweb"><dir name="js"><dir name="vsourz"><dir name="bannerslider"><file name="arrow.gif" hash="5034704a76cd55c1cbcbc58ea6bf523f"/><file name="cross.gif" hash="ba9a274b9323753cd95bc3b1eb2f4e5f"/><file name="hs.png" hash="fefa1a03d92ebad25c88dca94a0b63db"/><file name="hv.png" hash="990d71cada17da100653636cf8490884"/><file name="jscolor.js" hash="a26701f49bf33da8dc48f3431e5f4f42"/></dir></dir></dir></target><target name="magemedia"><dir name="bannerslider"><file name="favicon.ico" hash="88733ee53676a47fc354a61c32516e82"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

@@ -1,0 +1,111 @@
+<?php 
+$collection = $this->getImages();
+$imageData = $collection->getData();
+$catCollection = $this->getCategoryData();
+$catData = $catCollection->getData();
+?>
+
+<?php foreach($catData as $key => $value):
+	$sliderId=$value['slider_id'];
+	$sliderTitle=$value['slider_title'];
+	$status=$value['status'];
+	$title=$value['display_all_slide_title'];
+	$description=$value['display_all_slide_description'];	
+	$animationIn=$value['animation_in'];
+	$animationOut=$value['animation_out'];
+	$navigation=($value['navigation']==0)?"true":"false";
+	$navigationBgColor=$value['navigation_bg_color'];
+	$navigationHoverColor=$value['navigation_bg_hover_color'];	
+	$navigationArrowColor=$value['navigation_arrow_color'];
+	$navigationArrowHoverColor=$value['navigation_arrow_hover_color'];
+	$pagination=($value['pagination']==0)?"true":"false";
+	$paginationBgColor=$value['pagination_bg_color'];
+	$paginationHoverColor=$value['pagination_bg_hover_color'];
+	$autoplay=($value['auto_play']==0)?"false":"true";
+	$autoplayTimeout=($value['auto_play']==0)?0:$value['auto_play'];
+	endforeach;	
+?>
+<?php if($status==1): ?>
+<div class="image-gallery-outer">
+	<div class="image-detail">
+		<ul id="banner-slider<?php echo $sliderId ?>"  class="banner-slider">
+		<?php foreach($imageData as $data): ?>
+			<?php //print_r($data); ?>
+			<li class="banner-slide">
+				<div class="img-box">
+                	<?php if($data['slide_url']!="") { ?>
+                    	<a href="<?php echo $data['slide_url']; ?>" title="<?php echo $data['slide_title']; ?>">
+                      <?php } ?>
+					<div class="img-box-inner">
+						<img src="<?php echo Mage::getBaseUrl('media').$data['slide_img']; ?>" alt="<?php echo $data['slide_title']; ?>"/>
+						<div class="slide-desc-box t-<?php echo $data['text_align']; ?>">
+							<div class="slide-content" style="color:#<?php echo $data['text_color']; ?>">
+								<?php if($title==0): ?>
+									<h3 class="slide-title" style="color:#<?php echo $data['text_color']; ?>">
+										<?php echo $data['slide_title']; ?>
+									</h3><?php
+									endif;
+								?>
+								<?php if($description==0): ?>
+									<div class="slide-desc">
+										<?php echo $data['slide_description']; ?>
+									</div><?php
+									endif;
+								?>				
+							</div>
+						</div>
+				   </div>
+                   <?php if($data['slide_url']!="") { ?>
+                   	</a>
+                   	<?php } ?>
+				</div>
+			</li>
+		<?php endforeach; ?>
+		</ul>
+	</div>
+</div>
+<!-- Script -->
+<script type="text/javascript">
+jQuery.noConflict();
+jQuery(document).ready(function ($) {
+$('#banner-slider<?php echo $sliderId; ?>').owlSlider({
+    animateOut:'<?php echo $animationOut; ?>',
+    animateIn:'<?php echo $animationIn; ?>',
+    items:1,
+    margin:0,
+    stagePadding:0,
+	autoplay:<?php echo $autoplay; ?>,
+	autoplayTimeout:<?php echo $autoplayTimeout; ?>,
+	nav:<?php echo $navigation; ?>,
+	navText:['<','>'],
+	smartSpeed:450,
+	loop:true,
+	autoplayHoverPause:true,
+	dots:<?php echo $pagination; ?>
+});
+});
+</script>
+<!-- Style -->
+<style>
+#banner-slider<?php echo $sliderId; ?>.owl-theme .owl-controls .owl-nav div
+{
+	background:#<?php echo $navigationBgColor; ?>;
+	color:#<?php echo $navigationArrowColor;?>
+}
+#banner-slider<?php echo $sliderId; ?>.owl-theme .owl-controls .owl-nav div:hover
+{
+	background:#<?php echo $navigationHoverColor; ?>;
+	color:#<?php echo $navigationArrowHoverColor;?>
+}
+#banner-slider<?php echo $sliderId; ?>.owl-theme .owl-controls .owl-dot span
+{
+	background:#<?php echo $paginationBgColor; ?>;
+}
+#banner-slider<?php echo $sliderId; ?>.owl-theme .owl-controls .owl-dot.active span,
+#banner-slider<?php echo $sliderId; ?>.owl-theme .owl-controls .owl-dot:hover span
+{
+	background:#<?php echo $paginationHoverColor; ?>;
+}
+</style><?php 
+	endif;
+?>
