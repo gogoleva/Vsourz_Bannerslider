@@ -13,7 +13,7 @@ class Vsourz_Bannerslider_Block_Adminhtml_Image_Grid extends Mage_Adminhtml_Bloc
 		return parent::_prepareCollection();
 	}
 	protected function _prepareColumns(){
-		 $this->addColumn('bannerdetail_id', array(
+		$this->addColumn('bannerdetail_id', array(
 			'header' => Mage::helper('bannerslider')->__('ID'),
 			'align' => 'left',
 			'width' => '10px',
@@ -52,8 +52,13 @@ class Vsourz_Bannerslider_Block_Adminhtml_Image_Grid extends Mage_Adminhtml_Bloc
 			'index' => 'status',
 			'renderer' => 'bannerslider/adminhtml_bannerslider_renderer_status',			
 		));
-		
-	return parent::_prepareColumns();
+		$this->addColumnAfter('slide_position', array(
+			'header' => Mage::helper('bannerslider')->__('Slide Position'),
+			'align' => 'left',
+			'width' => '50px',
+			'index' => 'slide_position',
+		), 'bannerdetail_id');
+		return parent::_prepareColumns();
 	}
 	protected function _prepareMassaction(){
 		$this->setMassactionIdField('bannerdetail_id');
