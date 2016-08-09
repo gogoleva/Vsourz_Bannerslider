@@ -1,6 +1,6 @@
 <?php
 class Vsourz_Bannerslider_Block_Adminhtml_Image_Edit_Tabs_Form extends Mage_Adminhtml_Block_Widget_Form{
-	 protected function _prepareForm() {
+	protected function _prepareForm() {
 		if (Mage::registry('image_data')) {
 			$data = Mage::registry('image_data')->getData();
 		} else {
@@ -20,6 +20,13 @@ class Vsourz_Bannerslider_Block_Adminhtml_Image_Edit_Tabs_Form extends Mage_Admi
 			'files_browser_window_url' => Mage::getSingleton('adminhtml/url')->getUrl('adminhtml/cms_wysiwyg_images/index'),
 			'files_browser_window_width' => (int) Mage::getConfig()->getNode('adminhtml/cms/browser/window_width'),
 			'files_browser_window_height' => (int) Mage::getConfig()->getNode('adminhtml/cms/browser/window_height')
+		));
+
+		$fieldset->addField('slide_position', 'text', array(
+			'label' => Mage::helper('bannerslider')->__('Slide Position'),
+			'class' => 'required-entry',
+			'required' => true,
+			'name' => 'slide_position',
 		));
 		
 		$fieldset->addField('slide_title', 'text', array(
