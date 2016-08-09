@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Vsourz_Bannerslider>
-			<version>0.1.1</version>
+			<version>0.1.2</version>
 		</Vsourz_Bannerslider>
 	</modules>
 	<frontend>
